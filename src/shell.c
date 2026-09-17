@@ -9,7 +9,6 @@
 #include "shell.h"
 #include "utils.h"
 
-
 /**
  * Terminate the shell program
  * @param line
@@ -31,7 +30,7 @@ char* readline(const char *prompt)
     size_t buf_len = 16;
     char *buf = xmalloc(buf_len * sizeof(char));
 
-    printf("%s", prompt);
+    printf("%s %s %s", KMAG, prompt, KRESET);
     if (fgets(buf, buf_len, stdin) == NULL) {
         free(buf);
         return NULL;
